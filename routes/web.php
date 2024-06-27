@@ -7,4 +7,10 @@ use App\Http\Controllers\NoteController;
 //     return view('welcome');
 // });
 
-Route::get('product/{id?}', [NoteController::class, 'funtion'])->name('example.function');
+Route::get('/note', [NoteController::class, 'index'])->name('index');
+Route::get('/note/create', [NoteController::class, 'create'])->name('create');
+Route::post('note/store', [NoteController::class, 'store'])->name('store');
+Route::get('note/edit/{note}', [NoteController::class, 'edit'])->name('edit');
+Route::put('note/update/{note}', [NoteController::class, 'update'])->name('update');
+Route::get('/show/{note}', [NoteController::class, 'show'])->name('show');
+Route::delete('note/destroy/{note}', [NoteController::class, 'destroy'])->name('destroy');
